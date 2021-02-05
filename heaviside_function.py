@@ -9,12 +9,7 @@ import numpy as np
 #
 def heaviside_function_run(w, x):
     wx = np.dot(w,x)
-    if wx > 0: 
-        #print("THE VALUE OF WX IS: " + str(wx) + " THERFORE: " + str(1))
-        return 1 
-    elif wx == 0: 
-        #print("THE VALUE OF WX IS: " + str(wx) + " THERFORE: " + str(0.5)) 
-        return 0.5
-    else: 
-        #print("THE VALUE OF WX IS: " + str(wx) + " THERFORE: " + str(0)) 
-        return 0 
+
+    if wx > 0: return 1 
+    elif wx == 0: return 0.5
+    else: return 0 

@@ -8,9 +8,9 @@ def sequential_delta_learning_run(X, n, w, t, epoch):
     results = []
     for iter in range(epoch):
         for iter1 in range(len(X)):
-            previous_w = w 
             x = X[iter1]
-            y = heaviside_function_run(w,x)
+
+            y = heaviside_function_run(x,w)
 
             # Calculating: η( t−y ) xt, the sequential update
             update = np.zeros(len(x))
@@ -22,6 +22,7 @@ def sequential_delta_learning_run(X, n, w, t, epoch):
             # Formatting and storing output
             results.append((str(iter1 + 1 + (len(X) * iter)),np.round(t[iter1]), X[iter1], np.round(y, 4), np.round(w,2)))
     
+
     pt = PrettyTable(('Iteration','Class', 'X original', 'y = H(wx)', ' w = w+η( t−y ) xt'))
     for row in results: pt.add_row(row)
 

@@ -28,10 +28,10 @@ from sequential_delta_learning import sequential_delta_learning_run
 # w_with_threshold = [-theta, w] wX - theta = w_with_threshold.X_augmented.
 # Once wx has been computed we then apply the heavside function, of wx = 0 H(wx) = 0.5
 # for all other cases H(wx) is 0 if wx < 0, 1 if wx > 0
-w = [-6.5,-7.5,1.5]
+w = [6.5,-7.5,1.5]
 n = 1.0
 iterations = 2
-X = [[0.0,0.2],[1.0,2.0],[2.0,1.0],[-3.0,1.0],[-2.0,-1.0],[-3.0,-2.0]]
+X = [[0.0,2.0],[1.0,2.0],[2.0,1.0],[-3.0,1.0],[-2.0,-1.0],[-3.0,-2.0]]
 t = [1, 1, 1, 0, 0, 0]
 
 sequential_delta_learning_run(X,n,w,t,iterations)
