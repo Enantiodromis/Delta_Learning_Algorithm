@@ -28,3 +28,21 @@ Implementing using Gradient Descent is equivalent to the __Sequential Delta Lear
 <p align="center">
     <img width=auto height=auto src="https://i.imgur.com/ZFsvuGN.png">
 </p>
+
+## 3. Implementation Explanation
+- `heaviside_function_run(w, x)` 
+
+    Is the function for the Heaviside Function, the fucntions inputs are:
+    
+    - __w__ : List of weights
+    - __x__ : List of feature vectors
+
+- `sequential_delta_learning_run(X, n, w, t, epoch)`
+
+    Is the function for the Sequential Delta Learning Algorithm, the functions inputs are:
+
+    - __X__ : List of lists of feature vectors
+    - __n__ : Learning rate
+    - __w__ : List of weights
+    - __t__ : List of classes
+    - __epoch__ : Integer value

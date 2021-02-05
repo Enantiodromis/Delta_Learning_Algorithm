@@ -3,10 +3,10 @@ from prettytable import PrettyTable
 from heaviside_function import heaviside_function_run
 
 # Implementation of the Sequential Delta Learning algorithm. Using the update: w←w+η( t−y ) xt
-def sequential_delta_learning_run(X, n, w, t, iterations):
+def sequential_delta_learning_run(X, n, w, t, epoch):
     for el in X: el.insert(0,1) 
     results = []
-    for iter in range(iterations):
+    for iter in range(epoch):
         for iter1 in range(len(X)):
             previous_w = w 
             x = X[iter1]
