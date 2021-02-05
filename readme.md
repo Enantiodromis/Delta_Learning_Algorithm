@@ -15,7 +15,7 @@ Delta Learning can do either _sequential_ or _batch_ update:
 * __Sequential__ update: __w←w+η( t−y ) x<sup>t</sup>__
 * __Batch__ update: __w←w+η ∑<sub>p</sub>( t p−y p ) x p__
 
-## 2. Delta Learning Rule psuedocode implemented using Gradient Descent:
+## 2. Delta Learning Rule pseudocode implemented using Gradient Descent:
 Implementing using Gradient Descent is equivalent to the __Sequential Delta Learning Algorithm__.
 
 * Set value of hyper-parameter __(η)__
