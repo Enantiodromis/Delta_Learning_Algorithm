@@ -24,7 +24,7 @@ Implementing using Gradient Descent is equivalent to the __Sequential Delta Lear
     * Update weights: __w←w+η ( t<sub>k</sub>−H ( wx<sub>k</sub> ) ) x<sup>t</sup><sub>k</sub>__
 
 ## 3. Heaviside Function
-[The Heaviside Function](https://mathworld.wolfram.com/HeavisideStepFunction.html) often written as _H(x)_, is a non continuous function whose value is zero for a negative input and one for a posotive input. In the implementation we are using the following defenition of the Heaviside Function.
+[The Heaviside Function](https://mathworld.wolfram.com/HeavisideStepFunction.html) often written as _H(x)_, is a non continuous function whose value is zero for a negative input and one for a posotive input. In the implementation we are using the following definition of the Heaviside Function.
 <p align="center">
     <img width=auto height=auto src="https://i.imgur.com/ZFsvuGN.png">
 </p>
