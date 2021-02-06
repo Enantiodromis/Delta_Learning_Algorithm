@@ -4,8 +4,12 @@ from heaviside_function import heaviside_function_run
 
 # Implementation of the Sequential Delta Learning algorithm. Using the update: w←w+η( t−y ) xt
 def sequential_delta_learning_run(X, n, w, t, epoch):
+    if not isinstance(X, list) and not isinstance(t, list): X,t = X.tolist(), t.tolist() # Converting datasets to list if not already
+    
     for el in X: el.insert(0,1) 
     results = []
+    counter = 0
+
     for iter in range(epoch):
         for iter1 in range(len(X)):
             x = X[iter1]
@@ -21,8 +25,18 @@ def sequential_delta_learning_run(X, n, w, t, epoch):
 
             # Formatting and storing output
             results.append((str(iter1 + 1 + (len(X) * iter)),np.round(t[iter1]), X[iter1], np.round(y, 4), np.round(w,2)))
-    
+            
+            # Calculating the percentage of samples for which the linear threshold unit produces the desired output.
+            # Using the initial parameter values, and those calculated after learning for 2 epochs
+            if (t[iter1] == 0 and y == 1):
+                counter = counter + 1
+            if (t[iter1] == 1 and y == 0):
+                counter = counter + 1
+            if (t[iter1] == 2 and y == 0):
+                counter = counter + 1
 
+    percentage = (counter / (len(X) * epoch))*100
+    print("COUNTER: " + str(counter) + " PERCENTAGE: " + str(percentage)+"%")
     pt = PrettyTable(('Iteration','Class', 'X original', 'y = H(wx)', ' w = w+η( t−y ) xt'))
     for row in results: pt.add_row(row)
 
@@ -34,4 +48,4 @@ def sequential_delta_learning_run(X, n, w, t, epoch):
 
     print(pt)
 
-
+    return w
