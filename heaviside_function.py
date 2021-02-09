@@ -10,6 +10,6 @@ import numpy as np
 def heaviside_function_run(w, x):
     wx = np.dot(w,x)
 
-    if wx > 0: return 1 
+    if wx > 0: return 1
     elif wx == 0: return 0.5
     else: return 0 
